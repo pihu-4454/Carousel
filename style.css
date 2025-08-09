@@ -1,0 +1,90 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111; /* subtle page background */
+}
+
+/* Carousel sized to 75% of viewport width, centered */
+.carousel {
+  width: 75vw;              /* 3/4th of browser width */
+  max-width: 1400px;
+  min-width: 320px;
+  height: 65vh;             /* responsive height */
+  max-height: 900px;
+  margin: 4vh auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  background-color: #222;
+}
+
+/* track uses flex so each slide is 100% wide */
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(.22,.9,.3,1);
+  will-change: transform;
+}
+
+.carousel-item {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: #fff;
+  font-size: 1.9rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 150ms ease;
+  user-select: none;
+}
+.carousel-btn:hover { background: rgba(0,0,0,0.75); }
+.prev { left: 12px; }
+.next { right: 12px; }
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 4;
+}
+.carousel-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  padding: 0;
+}
+.carousel-dots button.active {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .carousel { height: 55vh; width: 90vw; }
+  .carousel-btn { font-size: 1.5rem; padding: 8px; }
+}

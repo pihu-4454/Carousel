@@ -12,12 +12,13 @@ Minimal, lightweight, and completely dependency-free.
 ***📦 Quick Start***<br>
 ```bash
 # Clone this repo
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/pihu-4454/Carousel.git
 
 # Open in browser
-cd your-repo-name
+cd Carousel
 open index.html
 ```
+
 ***🖌️ Customization*** <br>
 Change Images: Edit the URLs in index.html
 
